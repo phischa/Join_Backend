@@ -7,3 +7,13 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         exclude = []
+
+class TaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        exclude = []
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        exclude = []
