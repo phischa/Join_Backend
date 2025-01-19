@@ -1,5 +1,5 @@
 from django.db import models
-#from phonenumber_field.modelfields import PhoneNumberField
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
@@ -26,7 +26,7 @@ class Task(models.Model):
 class Contact(models.Model):
     name = models.CharField(max_length=25, unique=True)
     email = models.EmailField(max_length=255, unique=True)
-    #phone = PhoneNumberField(unique=True, region="DE")
+    phone = PhoneNumberField(unique=True, region="DE", null=True, blank=True)
 
     def __str__(self):
         f"{self.name}, {self.email}"

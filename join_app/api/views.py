@@ -8,9 +8,9 @@ from .serializers import UserSerializer, TaskSerializer, ContactSerializer
 
 from rest_framework import mixins, generics, viewsets
 
-@api_view(['GET'])
+""" @api_view(['GET'])
 def first_view(request):
-    return Response({"message":"Hallo World!"})
+    return Response({"message":"Hallo World!"}) """
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
