@@ -5,7 +5,6 @@ from django.shortcuts import get_object_or_404
 from join_app.models import User, Task, Contact
 
 from .serializers import UserSerializer, TaskSerializer, ContactSerializer
-
 from rest_framework import mixins, generics, viewsets
 
 """ @api_view(['GET'])
