@@ -1,5 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.http import JsonResponse
 
 from django.shortcuts import get_object_or_404
 from join_app.models import User, Task, Contact
@@ -10,6 +11,9 @@ from rest_framework import mixins, generics, viewsets
 """ @api_view(['GET'])
 def first_view(request):
     return Response({"message":"Hallo World!"}) """
+
+def actual_user_view(request):
+    return JsonResponse({"message": "Actual user data here"})
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
