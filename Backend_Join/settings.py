@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-v1wa_(ch+21$k#kj__&g4%szai1--p%g=&s&x)9#4*k5h^eh(u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 
+    #"http://http://127.0.0.1:5500"
+    '127.0.0.1',
+    'localhost'
+]
 
 
 # Application definition
@@ -37,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'join_app',
     'phonenumber_field',
@@ -50,6 +55,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
+    "http://127.0.0.1:3000",
 ]
 
 ROOT_URLCONF = 'Backend_Join.urls'
